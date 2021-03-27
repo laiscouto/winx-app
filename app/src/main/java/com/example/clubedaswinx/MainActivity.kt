@@ -11,9 +11,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     private val adapter = WinxAdapter(::handleClick)
     private val list = listOf(WinxPresentation(R.drawable.bloom, "Bloom"),
-            WinxPresentation(R.drawable.flora,"Flora"), WinxPresentation(R.drawable.musa,
-            "Musa"), WinxPresentation(R.drawable.stela,"Stela"),
-            WinxPresentation(R.drawable.original, "Tecna")
+            WinxPresentation(R.drawable.flora, "Flora"), WinxPresentation(R.drawable.musa,
+            "Musa"), WinxPresentation(R.drawable.stela, "Stela"),
+            WinxPresentation(R.drawable.original, "Techna")
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,19 +24,21 @@ class MainActivity : AppCompatActivity() {
         Imagens.adapter = this.adapter
     }
 
-    fun winxList(){
+    fun winxList() {
         /*list.forEach{adapter.add(it)}*/
         adapter.submitList(list)
     }
 
-    fun handleClick(nome: String){
+    fun handleClick(nome: String) {
         val intent = Intent(this, InfoWinxActivity::class.java).apply {
             val bundle = Bundle()
             bundle.putString(KEY_NAME, nome)
+            putExtras(bundle)
         }
         startActivity(intent)
     }
-    companion object{
+
+    companion object {
         const val KEY_NAME = "Name"
     }
 }

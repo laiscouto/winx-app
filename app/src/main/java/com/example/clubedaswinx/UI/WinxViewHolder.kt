@@ -2,7 +2,6 @@ package com.example.clubedaswinx.UI
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.example.clubedaswinx.UI.WinxPresentation
 import kotlinx.android.synthetic.main.view_winx_imagens.view.*
 
 class WinxViewHolder(itemView: View, private val onCLickItem:(nome: String)-> Unit): RecyclerView.ViewHolder(itemView) {

@@ -5,11 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.example.clubedaswinx.R
 
-class WinxAdapter(private val onCLickItem:(nome: String)-> Unit) : ListAdapter<WinxPresentation, WinxViewHolder>(WinxDiffUltis()){
+class WinxAdapter(private val onCLickItem: (nome: String) -> Unit) : ListAdapter<WinxPresentation, WinxViewHolder>(WinxDiffUltis()) {
 
     private val list = mutableListOf<WinxPresentation>()
 
-    fun add(winxPresentation: WinxPresentation){
+    fun add(winxPresentation: WinxPresentation) {
         list.add(winxPresentation)
     }
 
